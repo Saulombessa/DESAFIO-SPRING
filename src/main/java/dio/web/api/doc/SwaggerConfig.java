@@ -42,14 +42,14 @@ public class SwaggerConfig {
     public Docket detalheApi() {
         Docket docket = new Docket(DocumentationType.SWAGGER_2);
 
-        docket
+        Docket produces = docket
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("pacote.comseus.controllers"))
+                .apis(RequestHandlerSelectors.basePackage("dio.web.api.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(this.informacoesApi().build())
-                .consumes(new HashSet<String>(Arrays.asList("application/json")))
-                .produces(new HashSet<String>(Arrays.asList("application/json")));
+                .consumes(new HashSet<>(Arrays.asList("application/json")))
+                .produces(new HashSet<>(Arrays.asList("application/json")));
 
         return docket;
     }
