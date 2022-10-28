@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class WellcomeController {
     @GetMapping
     public String welcome(){
+
         return "WELCOME TO MY SRPING BOOT WEB API";
     }
 }
